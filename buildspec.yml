@@ -7,12 +7,15 @@ env:
 phases:
   install:
     commands:
+    - runtime-versions:
+    - java: openjdk8
     - echo installing maven...
     - apt-get update -y
     - apt-get install -y maven
   build:
     commands:
     - echo building the justiceleague-tracker
+    - mvn test
     - mvn install
 artifacts:
   files:
