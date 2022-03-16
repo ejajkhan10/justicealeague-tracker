@@ -2,20 +2,18 @@ version: 0.2
 
 env:
   variables:
-    JAVA_HOME: "/usr/lib/jvm/java-1.8.0-openjdk"
+    JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
 
 phases:
   install:
     commands:
     - runtime-versions:
-    - java: openjdk8
     - echo installing maven...
     - apt-get update -y
     - apt-get install -y maven
   build:
     commands:
     - echo building the justiceleague-tracker
-    - mvn test
     - mvn install
 artifacts:
   files:
